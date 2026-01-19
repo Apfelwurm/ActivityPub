@@ -10,7 +10,6 @@ use Rikudou\ActivityPub\Validator\Condition\NotNull;
 use Rikudou\ActivityPub\Validator\ConditionalValidator;
 use Rikudou\ActivityPub\Validator\IsBoolValidator;
 use Rikudou\ActivityPub\Validator\IsEnumValidator;
-use Rikudou\ActivityPub\Validator\IsIntegerValidator;
 use Rikudou\ActivityPub\Validator\NonNegativeNumberValidator;
 use Rikudou\ActivityPub\Vocabulary\Core\BaseObject;
 use Rikudou\ActivityPub\Vocabulary\Core\Link;
@@ -204,17 +203,14 @@ class Event extends BaseObject
             ),
             'maximumAttendeeCapacity' => new ConditionalValidator(
                 new NotNull(),
-                new IsIntegerValidator(),
                 new NonNegativeNumberValidator(),
             ),
             'participantCount' => new ConditionalValidator(
                 new NotNull(),
-                new IsIntegerValidator(),
                 new NonNegativeNumberValidator(),
             ),
             'remainingAttendeeCapacity' => new ConditionalValidator(
                 new NotNull(),
-                new IsIntegerValidator(),
                 new NonNegativeNumberValidator(),
             ),
             'repliesModerationOption' => new ConditionalValidator(
