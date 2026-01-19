@@ -34,6 +34,9 @@ class Event extends BaseObject
      * - "restricted": Join requests require approval
      * - "invite": Only invited users can join
      * - "external": Registration happens on an external platform
+     * 
+     * Can be set using an EventJoinMode enum value, a Link object, or a string URL
+     * (which will be automatically converted to a Link for extensibility).
      */
     public EventJoinMode|Link|null $joinMode = null {
         get => $this->joinMode;
@@ -56,6 +59,9 @@ class Event extends BaseObject
      * - "online": Virtual/online event
      * - "offline": Physical/in-person event
      * - "mixed": Hybrid event (both online and offline)
+     * 
+     * Can be set using an EventParticipationMode enum value, a Link object, or a string URL
+     * (which will be automatically converted to a Link for extensibility).
      */
     public EventParticipationMode|Link|null $participationMode = null {
         get => $this->participationMode;
@@ -78,6 +84,9 @@ class Event extends BaseObject
      * - "tentative": Event might be cancelled
      * - "confirmed": Event is confirmed to happen
      * - "cancelled": Event has been cancelled
+     * 
+     * Can be set using an EventStatus enum value, a Link object, or a string URL
+     * (which will be automatically converted to a Link for extensibility).
      */
     public EventStatus|Link|null $eventStatus = null {
         get => $this->eventStatus;
@@ -143,6 +152,9 @@ class Event extends BaseObject
      * - "allow": All comments are allowed
      * - "restricted": Comments are moderated before appearing
      * - "closed": No comments are allowed
+     * 
+     * Can be set using a RepliesModerationOption enum value, a Link object, or a string URL
+     * (which will be automatically converted to a Link for extensibility).
      */
     public RepliesModerationOption|Link|null $repliesModerationOption = null {
         get => $this->repliesModerationOption;
